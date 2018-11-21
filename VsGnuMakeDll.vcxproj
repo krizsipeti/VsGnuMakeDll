@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A7E93456-D49F-4120-91F1-06B080787DA0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>VSMakeDll</RootNamespace>
+    <RootNamespace>VsGnuMakeDll</RootNamespace>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -151,7 +151,7 @@
     <ClInclude Include="w32\subproc\proc.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="VSMakeDll.rc" />
+    <ResourceCompile Include="VsGnuMakeDll.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

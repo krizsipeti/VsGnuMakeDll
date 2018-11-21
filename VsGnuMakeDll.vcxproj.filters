@@ -184,7 +184,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="VSMakeDll.rc">
+    <ResourceCompile Include="VsGnuMakeDll.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
