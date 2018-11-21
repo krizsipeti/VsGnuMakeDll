@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A7E93456-D49F-4120-91F1-06B080787DA0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>VSMakeDll</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;VSMAKEDLL_EXPORTS;HAVE_CONFIG_H=1;WINDOWS32=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;w32/include;glob;</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>false</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;VSMAKEDLL_EXPORTS;HAVE_CONFIG_H=1;WINDOWS32=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;w32/include;glob;</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>false</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ar.c" />
+    <ClCompile Include="arscan.c" />
+    <ClCompile Include="commands.c" />
+    <ClCompile Include="default.c" />
+    <ClCompile Include="dir.c" />
+    <ClCompile Include="expand.c" />
+    <ClCompile Include="exported.cpp">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="file.c" />
+    <ClCompile Include="function.c" />
+    <ClCompile Include="getloadavg.c" />
+    <ClCompile Include="getopt.c" />
+    <ClCompile Include="getopt1.c" />
+    <ClCompile Include="glob\fnmatch.c" />
+    <ClCompile Include="glob\glob.c" />
+    <ClCompile Include="hash.c" />
+    <ClCompile Include="implicit.c" />
+    <ClCompile Include="job.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="misc.c" />
+    <ClCompile Include="read.c" />
+    <ClCompile Include="remake.c" />
+    <ClCompile Include="remote-stub.c" />
+    <ClCompile Include="rule.c" />
+    <ClCompile Include="signame.c" />
+    <ClCompile Include="strcache.c" />
+    <ClCompile Include="variable.c" />
+    <ClCompile Include="version.c" />
+    <ClCompile Include="vpath.c" />
+    <ClCompile Include="w32\compat\dirent.c" />
+    <ClCompile Include="w32\pathstuff.c" />
+    <ClCompile Include="w32\subproc\misc_w32.c" />
+    <ClCompile Include="w32\subproc\sub_proc.c" />
+    <ClCompile Include="w32\subproc\w32err.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="commands.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="dep.h" />
+    <ClInclude Include="exported.h" />
+    <ClInclude Include="filedef.h" />
+    <ClInclude Include="getopt.h" />
+    <ClInclude Include="gettext.h" />
+    <ClInclude Include="glob\fnmatch.h" />
+    <ClInclude Include="glob\glob.h" />
+    <ClInclude Include="hash.h" />
+    <ClInclude Include="job.h" />
+    <ClInclude Include="make.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="rule.h" />
+    <ClInclude Include="variable.h" />
+    <ClInclude Include="vmsdir.h" />
+    <ClInclude Include="w32\include\dirent.h" />
+    <ClInclude Include="w32\include\pathstuff.h" />
+    <ClInclude Include="w32\include\sub_proc.h" />
+    <ClInclude Include="w32\include\w32err.h" />
+    <ClInclude Include="w32\subproc\proc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VSMakeDll.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
